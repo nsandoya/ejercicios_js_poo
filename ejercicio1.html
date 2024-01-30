@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generar serie Fibonacci | Nataly Sandoya</title>
+</head>
+<body>
+    <h1>Revisar la consola :)</h1>
+    <script>
+        let numeroDeElementos 
+
+        while(!numeroDeElementos || isNaN(numeroDeElementos) || numeroDeElementos < 2){
+            numeroDeElementos = (parseInt(prompt("Ingrese la longitud de su serie Fibonacci:")))
+            if(numeroDeElementos < 2){
+                alert("Ingrese un número mayor a 2")
+            }else if(isNaN(numeroDeElementos)){
+                alert("Ingrese un número que determine la longitud de la serie")
+            }
+        }
+        fibonacci(numeroDeElementos)
+
+        function verSerie(fib_serie){
+            r = fib_serie.reduce((acum, item) => {
+                return acum +", "+item}
+            )
+            alert(`Su serie es: ${r}`)
+            console.log(`Su serie es: ${r}`)
+        }
+
+        function fibonacci(numeroDeElementos){
+            let fib_serie = [0, 1];
+
+            if (fib_serie.length == numeroDeElementos){
+                verSerie(fib_serie)
+            }else{
+                for (; !(fib_serie.length == numeroDeElementos); ){
+                    l = fib_serie.length;
+                    u = l - 1; 
+                    ultimo = fib_serie[u];
+                    nuevoNumero = fib_serie[u-1] + ultimo;
+                    fib_serie.push(nuevoNumero)
+                }
+                verSerie(fib_serie)
+            }
+        }
+
+    </script>
+</body>
+</html>
