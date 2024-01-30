@@ -14,7 +14,8 @@
 
         filtrar(inicio, numeros);
         listaOrdenada = dividir(numeros);
-        verSerie(listaOrdenada);
+        lO = listaOrdenada.reverse();
+        verSerie(lO);
         /* console.log("Resultado: ",listaOrdenada.reverse()); */
         /* console.log(otros); */
 
@@ -26,6 +27,7 @@
             console.log(`Resultado: ${r}`)
         }
 
+        // De aquí en adelante iremos de pequeño a grande: se procederá a divir la lista original en partes cada vez más pequeñas, para ordenarlas e ir construyendo subconjuntos ordenados que finalmente podamos unir en piezas más grandes, hasta lograr un gran array ordenado c:
         function dividir(numeros){
             if(numeros.length < 2){
                 return numeros; //2. Si llegamos acá es porque el array ingresado está en su mínima expresión (1 elemento)
